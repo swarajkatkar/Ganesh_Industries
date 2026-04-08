@@ -13,32 +13,32 @@
 
 const VARIANTS = {
   default: {
-    className: 'text-[#4a5568]',
+    className: 'text-[#3d6070]',
     style: {
-      background: '#e0e5ec',
-      boxShadow: '3px 3px 6px #babecc, -3px -3px 6px #ffffff',
+      background: '#e2edf6',
+      boxShadow: '3px 3px 6px #b5c9db, -3px -3px 6px #ffffff',
     },
   },
   accent: {
     className: 'text-white',
     style: {
-      background: '#ff4757',
-      boxShadow: '3px 3px 6px rgba(255,71,87,0.35), -2px -2px 6px rgba(255,255,255,0.5)',
+      background: '#0d9488',
+      boxShadow: '3px 3px 6px rgba(13,148,136,0.35), -2px -2px 6px rgba(255,255,255,0.5)',
     },
   },
   outline: {
-    className: 'text-[#ff4757]',
+    className: 'text-[#0d9488]',
     style: {
       background: 'transparent',
       boxShadow: 'none',
-      border: '1.5px solid rgba(255,71,87,0.4)',
+      border: '1.5px solid rgba(13,148,136,0.4)',
     },
   },
   recessed: {
-    className: 'text-[#4a5568]',
+    className: 'text-[#3d6070]',
     style: {
-      background: '#d1d9e6',
-      boxShadow: 'inset 2px 2px 5px #babecc, inset -2px -2px 5px #ffffff',
+      background: '#ccdde9',
+      boxShadow: 'inset 2px 2px 5px #b5c9db, inset -2px -2px 5px #ffffff',
     },
   },
 };
@@ -50,12 +50,12 @@ function LEDDot({ active = true }) {
       {active && (
         <span
           className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
-          style={{ background: '#ff4757' }}
+          style={{ background: '#0d9488' }}
         />
       )}
       <span
         className="relative inline-flex rounded-full w-[6px] h-[6px]"
-        style={{ background: active ? '#ff4757' : '#babecc' }}
+        style={{ background: active ? '#0d9488' : '#b5c9db' }}
       />
     </span>
   );

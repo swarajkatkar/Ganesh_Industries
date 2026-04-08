@@ -10,7 +10,7 @@ export default function Footer() {
       {/* ── Grid card ──────────────────────────────── */}
       <div
         className="rounded-2xl px-8 py-10 grid grid-cols-1 md:grid-cols-3 gap-10"
-        style={{ boxShadow: '8px 8px 16px #babecc, -8px -8px 16px #ffffff' }}
+        style={{ boxShadow: '8px 8px 16px #b5c9db, -8px -8px 16px #ffffff' }}
       >
 
         {/* ── Column 1: Brand ────────────────────── */}
@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="flex items-center gap-2">
             <div
               className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
-              style={{ boxShadow: 'inset 4px 4px 8px #babecc, inset -4px -4px 8px #ffffff' }}
+              style={{ boxShadow: 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff' }}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="var(--color-accent)" strokeWidth="2.2"
@@ -80,7 +80,7 @@ export default function Footer() {
             <li className="flex items-start gap-3">
               <div
                 className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                style={{ boxShadow: 'inset 3px 3px 6px #babecc, inset -3px -3px 6px #ffffff' }}
+                style={{ boxShadow: 'inset 3px 3px 6px #b5c9db, inset -3px -3px 6px #ffffff' }}
               >
                 <Phone size={13} color="var(--color-accent)" />
               </div>
@@ -100,7 +100,7 @@ export default function Footer() {
             <li className="flex items-start gap-3">
               <div
                 className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                style={{ boxShadow: 'inset 3px 3px 6px #babecc, inset -3px -3px 6px #ffffff' }}
+                style={{ boxShadow: 'inset 3px 3px 6px #b5c9db, inset -3px -3px 6px #ffffff' }}
               >
                 <Mail size={13} color="var(--color-accent)" />
               </div>
@@ -120,7 +120,7 @@ export default function Footer() {
             <li className="flex items-start gap-3">
               <div
                 className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                style={{ boxShadow: 'inset 3px 3px 6px #babecc, inset -3px -3px 6px #ffffff' }}
+                style={{ boxShadow: 'inset 3px 3px 6px #b5c9db, inset -3px -3px 6px #ffffff' }}
               >
                 <MapPin size={13} color="var(--color-accent)" />
               </div>

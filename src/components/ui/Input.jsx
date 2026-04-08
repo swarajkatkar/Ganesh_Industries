@@ -60,9 +60,9 @@ export default function Input({
             /* Typography — monospace for industrial feel */
             'font-mono text-[13px]',
             /* Colours */
-            'bg-[#e0e5ec]',
-            'text-[#2d3436]',
-            'placeholder:text-[#9aa5b4]',
+            'bg-[#e2edf6]',
+            'text-[#1a2e3a]',
+            'placeholder:text-[#8aabb8]',
             /* No border */
             'border-0 outline-none',
             /* Padding — extra-left when icon present */
@@ -74,7 +74,7 @@ export default function Input({
             /* Transition */
             'transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]',
             /* Error state */
-            error ? 'ring-2 ring-[#ff4757]' : '',
+            error ? 'ring-2 ring-[#0d9488]' : '',
             className,
           ]
             .filter(Boolean)
@@ -82,8 +82,8 @@ export default function Input({
           style={{
             /* Inset neumorphic shadow — recessed look */
             boxShadow: error
-              ? 'inset 4px 4px 8px #babecc, inset -4px -4px 8px #ffffff, 0 0 0 2px #ff4757'
-              : 'inset 4px 4px 8px #babecc, inset -4px -4px 8px #ffffff',
+              ? 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff, 0 0 0 2px #0d9488'
+              : 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff',
             /* Override focus ring from browser */
             '--tw-ring-shadow': 'none',
             ...extraStyle,
@@ -91,13 +91,13 @@ export default function Input({
           /* LED-accent glow on focus — via onFocus/onBlur so no CSS module needed */
           onFocus={(e) => {
             e.currentTarget.style.boxShadow =
-              'inset 4px 4px 8px #babecc, inset -4px -4px 8px #ffffff, 0 0 0 2px #ff4757, 0 0 8px rgba(255,71,87,0.25)';
+              'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff, 0 0 0 2px #0d9488, 0 0 8px rgba(13,148,136,0.25)';
             if (rest.onFocus) rest.onFocus(e);
           }}
           onBlur={(e) => {
             e.currentTarget.style.boxShadow = error
-              ? 'inset 4px 4px 8px #babecc, inset -4px -4px 8px #ffffff, 0 0 0 2px #ff4757'
-              : 'inset 4px 4px 8px #babecc, inset -4px -4px 8px #ffffff';
+              ? 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff, 0 0 0 2px #0d9488'
+              : 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff';
             if (rest.onBlur) rest.onBlur(e);
           }}
           {...rest}
@@ -108,7 +108,7 @@ export default function Input({
       {error && (
         <p
           className="text-[11px] font-medium mt-0.5"
-          style={{ color: '#ff4757' }}
+          style={{ color: '#0d9488' }}
         >
           {error}
         </p>

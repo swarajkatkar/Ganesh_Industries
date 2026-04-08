@@ -263,7 +263,7 @@ export default function HomePage() {
                 {/* Label */}
                 <div
                   className="px-4 py-3 flex items-center justify-between"
-                  style={{ borderTop: '1px solid rgba(186,190,204,0.4)' }}
+                  style={{ borderTop: '1px solid rgba(181,201,219,0.4)' }}
                 >
                   <span
                     className="text-[12px] font-semibold leading-tight"

@@ -22,12 +22,12 @@ const SIZES = {
 
 const VARIANTS = {
   raised: {
-    boxShadow: '6px 6px 12px #babecc, -6px -6px 12px #ffffff',
-    background: '#e0e5ec',
+    boxShadow: '6px 6px 12px #b5c9db, -6px -6px 12px #ffffff',
+    background: '#e2edf6',
   },
   recessed: {
-    boxShadow: 'inset 4px 4px 8px #babecc, inset -4px -4px 8px #ffffff',
-    background: '#d1d9e6',
+    boxShadow: 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff',
+    background: '#ccdde9',
   },
 };
 
@@ -62,11 +62,11 @@ export default function IconContainer({
            Heavy: use CSS .icon-lift for scale(1.15)+rotate(8deg)+drop-shadow */
         'transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]',
         /* Glow: stronger drop-shadow pulse on hover */
-        glow && 'hover:drop-shadow-[0_0_10px_rgba(255,71,87,0.65)]',
+        glow && 'hover:drop-shadow-[0_0_10px_rgba(13,148,136,0.65)]',
         /* Scale & optional rotate */
         rotate ? 'hover:scale-115 hover:rotate-[15deg]' : 'hover:scale-110',
         onClick ? 'cursor-pointer select-none' : '',
-        onClick ? 'focus:outline-none focus:ring-2 focus:ring-[#ff4757]' : '',
+        onClick ? 'focus:outline-none focus:ring-2 focus:ring-[#0d9488]' : '',
         className,
       ]
         .filter(Boolean)

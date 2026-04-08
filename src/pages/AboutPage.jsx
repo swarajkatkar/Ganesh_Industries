@@ -134,7 +134,7 @@ export default function AboutPage() {
           {/* Vertical spine */}
           <div
             className="absolute left-[19px] top-4 bottom-4 w-[2px] hidden sm:block"
-            style={{ background: 'linear-gradient(to bottom, var(--color-accent), rgba(255,71,87,0.1))' }}
+            style={{ background: 'linear-gradient(to bottom, var(--color-accent), rgba(13,148,136,0.1))' }}
           />
 
           {TIMELINE.map((item, i) => (
@@ -146,7 +146,7 @@ export default function AboutPage() {
                   style={{
                     background: i === TIMELINE.length - 1 ? 'var(--color-accent)' : 'var(--color-bg)',
                     color:      i === TIMELINE.length - 1 ? '#fff' : 'var(--color-accent)',
-                    boxShadow:  '5px 5px 10px #babecc, -5px -5px 10px #ffffff',
+                    boxShadow:  '5px 5px 10px #b5c9db, -5px -5px 10px #ffffff',
                   }}
                 >
                   {item.year.slice(2)}

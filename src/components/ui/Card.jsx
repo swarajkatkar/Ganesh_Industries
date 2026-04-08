@@ -55,7 +55,7 @@ function Vents() {
           style={{
             width: `${20 - i * 3}px`,
             height: '2px',
-            background: 'linear-gradient(90deg, #babecc, transparent)',
+            background: 'linear-gradient(90deg, #b5c9db, transparent)',
             opacity: 0.6,
           }}
         />
@@ -88,7 +88,7 @@ export default function Card({
     <Tag
       className={[
         'relative overflow-hidden',
-        'bg-[#e0e5ec] rounded-[16px]',
+        'bg-[#e2edf6] rounded-[16px]',
         /* Base transition — 300ms cubic-bezier */
         'transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]',
         /* Hook for CSS §B hover upgrade (-4px lift + deeper shadow) */
@@ -99,7 +99,7 @@ export default function Card({
         .filter(Boolean)
         .join(' ')}
       style={{
-        boxShadow: '8px 8px 16px #babecc, -8px -8px 16px #ffffff',
+        boxShadow: '8px 8px 16px #b5c9db, -8px -8px 16px #ffffff',
         ...extraStyle,
       }}
       {...rest}

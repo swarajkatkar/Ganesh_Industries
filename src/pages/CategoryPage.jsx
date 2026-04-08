@@ -23,8 +23,8 @@ function FilterChip({ label, active, onClick }) {
         background: active ? 'var(--color-accent)' : 'var(--color-bg)',
         color:      active ? '#fff'                 : 'var(--color-text-secondary)',
         boxShadow:  active
-          ? '3px 3px 6px rgba(255,71,87,0.35), -2px -2px 5px rgba(255,255,255,0.5)'
-          : 'inset 3px 3px 6px #babecc, inset -3px -3px 6px #ffffff',
+          ? '3px 3px 6px rgba(13,148,136,0.35), -2px -2px 5px rgba(255,255,255,0.5)'
+          : 'inset 3px 3px 6px #b5c9db, inset -3px -3px 6px #ffffff',
       }}
     >
       {label}
@@ -221,11 +221,11 @@ export default function CategoryPage() {
           <div
             className="rounded-2xl p-14 flex flex-col items-center gap-4 text-center"
             style={{
-              boxShadow: 'inset 4px 4px 8px #babecc, inset -4px -4px 8px #ffffff',
+              boxShadow: 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff',
               background: 'var(--color-bg)',
             }}
           >
-            <Package size={40} color="#babecc" />
+            <Package size={40} color="#b5c9db" />
             <p
               className="font-semibold"
               style={{ color: 'var(--color-text-secondary)' }}
@@ -290,7 +290,7 @@ export default function CategoryPage() {
                           style={{
                             background: 'var(--color-recessed)',
                             color: 'var(--color-text-secondary)',
-                            boxShadow: 'inset 2px 2px 4px #babecc, inset -2px -2px 4px #ffffff',
+                            boxShadow: 'inset 2px 2px 4px #b5c9db, inset -2px -2px 4px #ffffff',
                           }}
                         >
                           {sz}

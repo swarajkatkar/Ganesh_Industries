@@ -57,7 +57,7 @@ export default function CSRPage() {
               <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight"
                 style={{ color: '#ffffff' }}>
                 Business Beyond{' '}
-                <span style={{ color: '#ff4757' }}>Profit</span>
+                <span style={{ color: '#0d9488' }}>Profit</span>
               </h1>
               <p className="text-base max-w-xl leading-relaxed"
                 style={{ color: 'rgba(255,255,255,0.85)' }}>
@@ -116,7 +116,7 @@ export default function CSRPage() {
                 className="flex gap-3 rounded-2xl p-4"
                 style={{
                   background: 'var(--color-recessed)',
-                  boxShadow: 'inset 4px 4px 8px #babecc, inset -4px -4px 8px #ffffff',
+                  boxShadow: 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff',
                 }}
               >
                 <Quote size={20} color="var(--color-accent)" className="shrink-0 mt-0.5" />

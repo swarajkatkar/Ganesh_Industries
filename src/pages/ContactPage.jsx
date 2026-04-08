@@ -112,7 +112,7 @@ export default function ContactPage() {
             <div className="flex flex-col items-center justify-center gap-5 py-12 text-center">
               <div
                 className="w-16 h-16 rounded-full flex items-center justify-center"
-                style={{ boxShadow: 'inset 4px 4px 8px #babecc, inset -4px -4px 8px #ffffff' }}
+                style={{ boxShadow: 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff' }}
               >
                 <CheckCircle2 size={32} color="var(--color-accent)" />
               </div>

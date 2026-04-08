@@ -6,25 +6,27 @@
    DESIGN SYSTEM: CSS CUSTOM PROPERTIES
 ───────────────────────────────────────── */
 :root {
-  /* Colors */
-  --color-bg: #e0e5ec;
-  --color-surface: #f0f2f5;
-  --color-recessed: #d1d9e6;
-  --color-text-primary: #2d3436;
-  --color-text-secondary: #4a5568;
-  --color-accent: #ff4757;
+  /* Colors — Blue & Green industrial palette */
+  --color-bg: #e1f1fd;
+  --color-surface: #edf7ff;
+  --color-recessed: #ccdde9;
+  --color-text-primary: #1a2e3a;
+  --color-text-secondary: #3d6070;
+  --color-accent: #0d9488;      /* teal-green — bridges blue & green */
+  --color-accent-alt: #0a7a70;  /* deeper teal for hover states */
+  --color-blue: #1e6fa0;        /* supporting ocean-blue accent */
 
-  /* Shadows */
+  /* Shadows — cool-blue neumorphic */
   --shadow-card:
-    8px 8px 16px #babecc,
+    8px 8px 16px #b4cce4,
     -8px -8px 16px #ffffff;
 
   --shadow-pressed:
-    inset 6px 6px 12px #babecc,
+    inset 6px 6px 12px #b4cce4,
     inset -6px -6px 12px #ffffff;
 
   --shadow-recessed:
-    inset 4px 4px 8px #babecc,
+    inset 4px 4px 8px #b4cce4,
     inset -4px -4px 8px #ffffff;
 
   /* Typography */
@@ -75,7 +77,7 @@
 
 .neu-card:hover {
   box-shadow:
-    12px 12px 24px #babecc,
+    12px 12px 24px #b4cce4,
     -12px -12px 24px #ffffff;
   transform: translateY(-2px);
 }
@@ -107,7 +109,7 @@
 
 .neu-btn:hover {
   box-shadow:
-    10px 10px 20px #babecc,
+    10px 10px 20px #b4cce4,
     -10px -10px 20px #ffffff;
   transform: translateY(-1px);
 }
@@ -120,7 +122,7 @@
 .neu-btn-accent {
   background: var(--color-accent);
   box-shadow:
-    6px 6px 12px rgba(255, 71, 87, 0.4),
+    6px 6px 12px rgba(13, 148, 136, 0.4),
     -4px -4px 10px rgba(255, 255, 255, 0.6);
   color: #ffffff;
   border: none;
@@ -134,7 +136,7 @@
 
 .neu-btn-accent:hover {
   box-shadow:
-    8px 8px 16px rgba(255, 71, 87, 0.5),
+    8px 8px 16px rgba(13, 148, 136, 0.5),
     -6px -6px 14px rgba(255, 255, 255, 0.7);
   transform: translateY(-1px);
 }
@@ -162,7 +164,7 @@
 
 .neu-input:focus {
   box-shadow:
-    inset 5px 5px 10px #babecc,
+    inset 5px 5px 10px #b4cce4,
     inset -5px -5px 10px #ffffff,
     0 0 0 2px var(--color-accent);
 }
@@ -179,7 +181,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #babecc;
+  background: #b4cce4;
   border-radius: 3px;
 }
 
@@ -255,7 +257,7 @@
 .neu-card-hover:hover {
   transform: translateY(-4px);
   box-shadow:
-    14px 14px 28px #babecc,
+    14px 14px 28px #b4cce4,
     -14px -14px 28px #ffffff !important;
 }
 
@@ -309,15 +311,15 @@
 }
 .icon-lift:hover {
   transform: scale(1.15) rotate(8deg);
-  filter: drop-shadow(0 0 6px rgba(255, 71, 87, 0.6));
+  filter: drop-shadow(0 0 6px rgba(13, 148, 136, 0.6));
 }
 
 /* ─────────────────────────────────────────
    §F  LED PULSE (signature accent dot)
 ───────────────────────────────────────── */
 @keyframes led-pulse {
-  0%, 100% { opacity: 1;    box-shadow: 0 0 0   0 rgba(255, 71, 87, 0.5); }
-  50%      { opacity: 0.75; box-shadow: 0 0 0 6px rgba(255, 71, 87, 0);   }
+  0%, 100% { opacity: 1;    box-shadow: 0 0 0   0 rgba(13, 148, 136, 0.5); }
+  50%      { opacity: 0.75; box-shadow: 0 0 0 6px rgba(13, 148, 136, 0);   }
 }
 
 .led-dot {

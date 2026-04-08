@@ -22,7 +22,7 @@ function SpecRow({ icon: Icon, label, value }) {
   return (
     <div
       className="flex items-center gap-4 py-3"
-      style={{ borderBottom: '1px solid rgba(186,190,204,0.35)' }}
+      style={{ borderBottom: '1px solid rgba(181,201,219,0.35)' }}
     >
       <IconContainer
         size="sm"
@@ -147,7 +147,7 @@ export default function ProductDetailPage() {
             className="absolute inset-x-0 bottom-0 h-16 pointer-events-none"
             style={{
               background:
-                'linear-gradient(to top, rgba(224,229,236,0.6), transparent)',
+                'linear-gradient(to top, rgba(226,237,246,0.6), transparent)',
             }}
           />
         </Card>
@@ -192,7 +192,7 @@ export default function ProductDetailPage() {
                   style={{
                     background: 'var(--color-bg)',
                     color: 'var(--color-accent)',
-                    boxShadow: '5px 5px 10px #babecc, -5px -5px 10px #ffffff',
+                    boxShadow: '5px 5px 10px #b5c9db, -5px -5px 10px #ffffff',
                   }}
                 >
                   {sz}
@@ -204,7 +204,7 @@ export default function ProductDetailPage() {
           {/* Divider */}
           <div
             className="h-px w-full"
-            style={{ background: 'rgba(186,190,204,0.5)' }}
+            style={{ background: 'rgba(181,201,219,0.5)' }}
           />
 
           {/* CTA buttons */}
@@ -319,7 +319,7 @@ export default function ProductDetailPage() {
           {/* Industry tag */}
           <div
             className="mt-6 pt-4"
-            style={{ borderTop: '1px solid rgba(186,190,204,0.4)' }}
+            style={{ borderTop: '1px solid rgba(181,201,219,0.4)' }}
           >
             <span
               className="font-mono text-[10px] uppercase tracking-wider block mb-2"
@@ -390,7 +390,7 @@ export default function ProductDetailPage() {
           {/* Certifications strip */}
           <div
             className="mt-5 pt-5 flex flex-wrap gap-2"
-            style={{ borderTop: '1px solid rgba(186,190,204,0.4)' }}
+            style={{ borderTop: '1px solid rgba(181,201,219,0.4)' }}
           >
             {['Virgin-Grade Raw Material', 'Quality Inspected', 'ISO Facility'].map((cert) => (
               <Badge key={cert} variant="recessed" dot={false}>
@@ -513,7 +513,7 @@ export default function ProductDetailPage() {
                             background: 'var(--color-recessed)',
                             color: 'var(--color-text-secondary)',
                             boxShadow:
-                              'inset 2px 2px 4px #babecc, inset -2px -2px 4px #ffffff',
+                              'inset 2px 2px 4px #b5c9db, inset -2px -2px 4px #ffffff',
                           }}
                         >
                           {sz}

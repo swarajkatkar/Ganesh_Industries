@@ -20,7 +20,7 @@ export default function Navbar() {
       {/* ── Main bar ─────────────────────────────────── */}
       <div
         className="flex items-center justify-between rounded-2xl px-6 py-3"
-        style={{ boxShadow: '8px 8px 16px #babecc, -8px -8px 16px #ffffff' }}
+        style={{ boxShadow: '8px 8px 16px #b5c9db, -8px -8px 16px #ffffff' }}
       >
         {/* ── Logo / Brand ─────────────────────────── */}
         <Link
@@ -31,7 +31,7 @@ export default function Navbar() {
           {/* Recessed badge */}
           <div
             className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
-            style={{ boxShadow: 'inset 4px 4px 8px #babecc, inset -4px -4px 8px #ffffff' }}
+            style={{ boxShadow: 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff' }}
           >
             {/* Simple inline SVG icon — replace with <img src="/logo.png" /> later */}
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -66,7 +66,7 @@ export default function Navbar() {
                 ].join(' ')
               }
               style={({ isActive }) => ({
-                boxShadow: isActive ? 'inset 4px 4px 8px #babecc, inset -4px -4px 8px #ffffff' : undefined,
+                boxShadow: isActive ? 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff' : undefined,
               })}
             >
               {item.label}
@@ -83,7 +83,7 @@ export default function Navbar() {
                        transition-all duration-[300ms] hover:-translate-y-0.5"
             style={{
               background: 'var(--color-accent)',
-              boxShadow: '6px 6px 12px rgba(255,71,87,0.35), -4px -4px 10px rgba(255,255,255,0.6)',
+              boxShadow: '6px 6px 12px rgba(13,148,136,0.35), -4px -4px 10px rgba(255,255,255,0.6)',
             }}
           >
             Get a Quote
@@ -96,7 +96,7 @@ export default function Navbar() {
             aria-expanded={mobileOpen}
             className="md:hidden w-9 h-9 rounded-xl flex items-center justify-center
                        transition-all duration-200 active:scale-95"
-            style={{ boxShadow: '4px 4px 8px #babecc, -4px -4px 8px #ffffff' }}
+            style={{ boxShadow: '4px 4px 8px #b5c9db, -4px -4px 8px #ffffff' }}
           >
             {mobileOpen ? <X size={17} color="var(--color-accent)" /> : <Menu size={17} color="var(--color-text-primary)" />}
           </button>
@@ -107,7 +107,7 @@ export default function Navbar() {
       {mobileOpen && (
         <div
           className="mt-2 rounded-2xl px-4 py-4 flex flex-col gap-1"
-          style={{ boxShadow: '8px 8px 16px #babecc, -8px -8px 16px #ffffff' }}
+          style={{ boxShadow: '8px 8px 16px #b5c9db, -8px -8px 16px #ffffff' }}
         >
           {siteConfig.nav.map((item) => (
             <NavLink
@@ -125,7 +125,7 @@ export default function Navbar() {
               }
               style={({ isActive }) => ({
                 boxShadow: isActive
-                  ? 'inset 4px 4px 8px #babecc, inset -4px -4px 8px #ffffff'
+                  ? 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff'
                   : undefined,
               })}
             >
@@ -140,7 +140,7 @@ export default function Navbar() {
                        transition-all duration-200 active:scale-95"
             style={{
               background: 'var(--color-accent)',
-              boxShadow: '6px 6px 12px rgba(255,71,87,0.35), -4px -4px 10px rgba(255,255,255,0.6)',
+              boxShadow: '6px 6px 12px rgba(13,148,136,0.35), -4px -4px 10px rgba(255,255,255,0.6)',
             }}
           >
             Get a Quote

@@ -13,7 +13,7 @@
 const VARIANTS = {
   primary: {
     base: `
-      bg-[#ff4757] text-white
+      bg-[#0d9488] text-white
     `,
     style: {
       boxShadow: '6px 6px 12px rgba(0,0,0,0.15), -4px -4px 8px rgba(255,255,255,0.7)',
@@ -24,10 +24,10 @@ const VARIANTS = {
   },
   secondary: {
     base: `
-      bg-[#e0e5ec] text-[#2d3436]
+      bg-[#e2edf6] text-[#1a2e3a]
     `,
     style: {
-      boxShadow: '8px 8px 16px #babecc, -8px -8px 16px #ffffff',
+      boxShadow: '8px 8px 16px #b5c9db, -8px -8px 16px #ffffff',
     },
     hover: 'hover:-translate-y-[2px] hover:brightness-105',
     active: 'active:translate-y-[2px] neu-btn-press',
@@ -35,13 +35,13 @@ const VARIANTS = {
   },
   ghost: {
     base: `
-      bg-transparent text-[#ff4757]
+      bg-transparent text-[#0d9488]
     `,
     style: {
       boxShadow: 'none',
-      border: '1.5px solid rgba(255,71,87,0.35)',
+      border: '1.5px solid rgba(13,148,136,0.35)',
     },
-    hover: 'hover:bg-[rgba(255,71,87,0.06)] hover:-translate-y-[2px]',
+    hover: 'hover:bg-[rgba(13,148,136,0.06)] hover:-translate-y-[2px]',
     active: 'active:translate-y-[2px] neu-btn-press',
     activeStyle: {},
   },
