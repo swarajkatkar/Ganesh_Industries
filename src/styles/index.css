@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap');
 
 @import "tailwindcss";
 
@@ -6,39 +6,47 @@
    DESIGN SYSTEM: CSS CUSTOM PROPERTIES
 ───────────────────────────────────────── */
 :root {
-  /* Colors — Blue & Green industrial palette */
-  --color-bg: #e1f1fd;
-  --color-surface: #edf7ff;
-  --color-recessed: #ccdde9;
-  --color-text-primary: #1a2e3a;
-  --color-text-secondary: #3d6070;
-  --color-accent: #0d9488;      /* teal-green — bridges blue & green */
-  --color-accent-alt: #0a7a70;  /* deeper teal for hover states */
-  --color-blue: #1e6fa0;        /* supporting ocean-blue accent */
+  /* ── Core Color Palette ── */
+  --color-primary:        #0B5ED7;
+  --color-dark:           #0A2540;
+  --color-teal:           #14B8A6;
+  --color-cyan:           #22D3EE;
 
-  /* Shadows — cool-blue neumorphic */
-  --shadow-card:
-    8px 8px 16px #b4cce4,
-    -8px -8px 16px #ffffff;
+  /* ── Background & Surface ── */
+  --color-bg:             #F8FAFC;
+  --color-surface:        #FFFFFF;
+  --color-surface-2:      #F1F5F9;
 
-  --shadow-pressed:
-    inset 6px 6px 12px #b4cce4,
-    inset -6px -6px 12px #ffffff;
+  /* ── Text ── */
+  --color-text-primary:   #0F172A;
+  --color-text-secondary: #64748B;
+  --color-text-on-dark:   #FFFFFF;
 
-  --shadow-recessed:
-    inset 4px 4px 8px #b4cce4,
-    inset -4px -4px 8px #ffffff;
+  /* ── Border ── */
+  --color-border:         #E2E8F0;
 
-  /* Typography */
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  /* ── Accent (kept for backward compat) ── */
+  --color-accent:         #0B5ED7;
+  --color-accent-alt:     #14B8A6;
+
+  /* ── Hero / CTA Gradient ── */
+  --gradient-hero: linear-gradient(135deg, #0A2540 0%, #0B5ED7 50%, #14B8A6 100%);
+  --gradient-btn:  linear-gradient(135deg, #0B5ED7 0%, #14B8A6 100%);
+
+  /* ── Shadows (clean, NO neumorphism) ── */
+  --shadow-card:    0 10px 30px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 20px 48px rgba(0, 0, 0, 0.12);
+  --shadow-btn:     0 10px 25px rgba(11, 94, 215, 0.25);
+  --shadow-btn-hover: 0 16px 32px rgba(11, 94, 215, 0.38);
+  --shadow-navbar:  0 1px 24px rgba(10, 37, 64, 0.08);
+
+  /* ── Typography ── */
+  --font-heading: 'Poppins', system-ui, sans-serif;
+  --font-sans:    'Inter', system-ui, sans-serif;
 }
 
 /* ─────────────────────────────────────────
    BASE RESET & GLOBAL STYLES
-   Wrapped in @layer base so Tailwind v4
-   utility classes (which live in the
-   @utilities layer) can override them.
 ───────────────────────────────────────── */
 @layer base {
   *, *::before, *::after {
@@ -60,158 +68,14 @@
     min-height: 100vh;
     line-height: 1.6;
   }
-}
 
-/* ─────────────────────────────────────────
-   ALL COMPONENT / UTILITY STYLES
-   Wrapped in @layer components so Tailwind
-   v4 utility classes can still override.
-───────────────────────────────────────── */
-@layer components {
-.neu-card {
-  background: var(--color-bg);
-  box-shadow: var(--shadow-card);
-  border-radius: 16px;
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
-}
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
 
-.neu-card:hover {
-  box-shadow:
-    12px 12px 24px #b4cce4,
-    -12px -12px 24px #ffffff;
-  transform: translateY(-2px);
-}
-
-.neu-pressed {
-  background: var(--color-bg);
-  box-shadow: var(--shadow-pressed);
-  border-radius: 12px;
-}
-
-.neu-recessed {
-  background: var(--color-recessed);
-  box-shadow: var(--shadow-recessed);
-  border-radius: 12px;
-}
-
-.neu-btn {
-  background: var(--color-bg);
-  box-shadow: var(--shadow-card);
-  border: none;
-  border-radius: 12px;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  color: var(--color-text-primary);
-  outline: none;
-}
-
-.neu-btn:hover {
-  box-shadow:
-    10px 10px 20px #b4cce4,
-    -10px -10px 20px #ffffff;
-  transform: translateY(-1px);
-}
-
-.neu-btn:active {
-  box-shadow: var(--shadow-pressed);
-  transform: translateY(0);
-}
-
-.neu-btn-accent {
-  background: var(--color-accent);
-  box-shadow:
-    6px 6px 12px rgba(13, 148, 136, 0.4),
-    -4px -4px 10px rgba(255, 255, 255, 0.6);
-  color: #ffffff;
-  border: none;
-  border-radius: 12px;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  outline: none;
-}
-
-.neu-btn-accent:hover {
-  box-shadow:
-    8px 8px 16px rgba(13, 148, 136, 0.5),
-    -6px -6px 14px rgba(255, 255, 255, 0.7);
-  transform: translateY(-1px);
-}
-
-.neu-btn-accent:active {
-  box-shadow:
-    inset 4px 4px 8px rgba(0,0,0,0.2),
-    inset -2px -2px 6px rgba(255,255,255,0.1);
-  transform: translateY(0);
-}
-
-/* ─────────────────────────────────────────
-   INPUT FIELD
-───────────────────────────────────────── */
-.neu-input {
-  background: var(--color-recessed);
-  box-shadow: var(--shadow-recessed);
-  border: none;
-  border-radius: 10px;
-  font-family: var(--font-sans);
-  color: var(--color-text-primary);
-  outline: none;
-  transition: box-shadow 0.2s ease;
-}
-
-.neu-input:focus {
-  box-shadow:
-    inset 5px 5px 10px #b4cce4,
-    inset -5px -5px 10px #ffffff,
-    0 0 0 2px var(--color-accent);
-}
-
-/* ─────────────────────────────────────────
-   SCROLLBAR
-───────────────────────────────────────── */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-recessed);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #b4cce4;
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent);
-}
-
-/* ─────────────────────────────────────────
-   LAYOUT — SPACING & CENTERING UTILITIES
-───────────────────────────────────────── */
-.page-content {
-  display: flex;
-  flex-direction: column;
-  gap: 96px;
-  width: 100%;
-}
-@media (max-width: 768px) {
-  .page-content { gap: 56px; }
-}
-.section    { margin-top: 96px; }
-.section-sm { margin-top: 48px; }
-@media (max-width: 768px) {
-  .section    { margin-top: 56px; }
-  .section-sm { margin-top: 32px; }
-}
-
-}
-
-/* Prevent images from overflowing their containers */
-@layer base {
   img {
     max-width: 100%;
     height: auto;
@@ -219,17 +83,193 @@
   }
 }
 
+/* ─────────────────────────────────────────
+   COMPONENT LAYER
+───────────────────────────────────────── */
+@layer components {
+
+/* ── Premium Card (flat + shadow, NO neumorphism) ── */
+.premium-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.premium-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ── Legacy: kept class names so old components still work ── */
+.neu-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.neu-card:hover,
+.neu-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Removed neumorphic pressed/recessed — replaced with clean flat variants */
+.neu-pressed  { background: var(--color-surface-2); border-radius: 12px; }
+.neu-recessed { background: var(--color-surface-2); border-radius: 12px; }
+
+/* ── Primary Button ── */
+.btn-primary {
+  background: var(--gradient-btn);
+  color: #ffffff;
+  border: none;
+  border-radius: 11px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-btn);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.2s ease;
+  outline: none;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-btn-hover);
+  filter: brightness(1.08);
+}
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-btn);
+}
+
+/* ── Secondary Button ── */
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 11px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  outline: none;
+}
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* ── Ghost Button ── */
+.btn-ghost {
+  background: transparent;
+  color: var(--color-primary);
+  border: 1.5px solid rgba(11, 94, 215, 0.35);
+  border-radius: 11px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+.btn-ghost:hover {
+  background: rgba(11, 94, 215, 0.06);
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+}
+
+/* ── Input ── */
+.neu-input {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.neu-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(11, 94, 215, 0.15);
+}
+
+/* ── Removed neumorphic button classes — mapped to clean variants ── */
+.neu-btn {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 11px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+.neu-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.neu-btn:active { transform: translateY(0); }
+
+.neu-btn-accent {
+  background: var(--gradient-btn);
+  color: #ffffff;
+  border: none;
+  border-radius: 11px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-btn);
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+.neu-btn-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-btn-hover);
+  filter: brightness(1.08);
+}
+.neu-btn-accent:active { transform: translateY(0); }
+
+/* Removed press effects now replaced by translateY(0) on :active */
+.neu-btn-press:active        { transform: translateY(1px) !important; }
+.neu-btn-accent-press:active { transform: translateY(1px) !important; }
+
+/* ─────────────────────────────────────────
+   SCROLLBAR — clean blue tint
+───────────────────────────────────────── */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: var(--color-surface-2); }
+::-webkit-scrollbar-thumb  { background: #CBD5E1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
+
+/* ─────────────────────────────────────────
+   LAYOUT UTILITIES
+───────────────────────────────────────── */
+.page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 112px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .page-content { gap: 64px; }
+}
+.section    { margin-top: 112px; }
+.section-sm { margin-top: 56px; }
+@media (max-width: 768px) {
+  .section    { margin-top: 64px; }
+  .section-sm { margin-top: 36px; }
+}
+
+} /* end @layer components */
+
 /* ═════════════════════════════════════════
    MICRO-INTERACTIONS & ANIMATIONS
-   ── All animation enhancements live here ──
 ═════════════════════════════════════════ */
 @layer components {
 
-/* ─────────────────────────────────────────
-   §A  SCROLL REVEAL
-   Add class="reveal" to any element.
-   JS hook (useScrollReveal) toggles .is-visible.
-───────────────────────────────────────── */
+/* ── Scroll Reveal ── */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -241,51 +281,14 @@
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Stagger helpers — add to children */
 .reveal-delay-1 { transition-delay: 0.08s; }
 .reveal-delay-2 { transition-delay: 0.16s; }
 .reveal-delay-3 { transition-delay: 0.24s; }
 .reveal-delay-4 { transition-delay: 0.32s; }
 
-/* ─────────────────────────────────────────
-   §B  CARD HOVER UPGRADE
-   Overrides the default 1px lift with a
-   richer -4px lift + stronger shadow.
-───────────────────────────────────────── */
-.neu-card:hover,
-.neu-card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    14px 14px 28px #b4cce4,
-    -14px -14px 28px #ffffff !important;
-}
-
-/* ─────────────────────────────────────────
-   §C  BUTTON ACTIVE PRESS EFFECT
-   Adds inset shadow on :active state so
-   every button "presses in" physically.
-───────────────────────────────────────── */
-.neu-btn-press:active {
-  transform: translateY(2px) !important;
-  box-shadow:
-    inset 4px 4px 8px rgba(0, 0, 0, 0.18),
-    inset -3px -3px 7px rgba(255, 255, 255, 0.55) !important;
-}
-.neu-btn-accent-press:active {
-  transform: translateY(2px) !important;
-  box-shadow:
-    inset 4px 4px 10px rgba(0, 0, 0, 0.25),
-    inset -2px -2px 6px rgba(255, 255, 255, 0.1) !important;
-}
-
-/* ─────────────────────────────────────────
-   §D  IMAGE EFFECTS
-   Images inside .img-reveal start slightly
-   desaturated and sharpen on hover/parent-hover.
-───────────────────────────────────────── */
+/* ── Image Effects ── */
 .img-reveal {
-  filter: grayscale(30%) brightness(0.95);
+  filter: grayscale(20%) brightness(0.97);
   transition: filter 0.4s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .img-reveal:hover,
@@ -293,64 +296,41 @@
   filter: grayscale(0%) brightness(1);
   transform: scale(1.05);
 }
+.img-zoom { transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+.group:hover .img-zoom { transform: scale(1.05); }
 
-/* Standalone zoom (no grayscale) */
-.img-zoom {
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.group:hover .img-zoom {
-  transform: scale(1.05);
-}
-
-/* ─────────────────────────────────────────
-   §E  ICON INTERACTIONS
-───────────────────────────────────────── */
+/* ── Icon Interactions ── */
 .icon-lift {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-              filter  0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
 }
 .icon-lift:hover {
   transform: scale(1.15) rotate(8deg);
-  filter: drop-shadow(0 0 6px rgba(13, 148, 136, 0.6));
+  filter: drop-shadow(0 0 6px rgba(11, 94, 215, 0.55));
 }
 
-/* ─────────────────────────────────────────
-   §F  LED PULSE (signature accent dot)
-───────────────────────────────────────── */
+/* ── LED Pulse (uses new teal/blue) ── */
 @keyframes led-pulse {
-  0%, 100% { opacity: 1;    box-shadow: 0 0 0   0 rgba(13, 148, 136, 0.5); }
-  50%      { opacity: 0.75; box-shadow: 0 0 0 6px rgba(13, 148, 136, 0);   }
+  0%, 100% { opacity: 1;    box-shadow: 0 0 0   0 rgba(11, 94, 215, 0.5); }
+  50%      { opacity: 0.75; box-shadow: 0 0 0 6px rgba(11, 94, 215, 0);   }
 }
-
 .led-dot {
   display: inline-block;
-  width:  8px;
-  height: 8px;
+  width: 8px; height: 8px;
   border-radius: 50%;
-  background: var(--color-accent);
+  background: var(--color-teal);
   animation: led-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   flex-shrink: 0;
 }
+.led-dot-sm { width: 6px; height: 6px; }
 
-.led-dot-sm {
-  width:  6px;
-  height: 6px;
-}
-
-/* ─────────────────────────────────────────
-   §G  KEYFRAME ANIMATIONS
-───────────────────────────────────────── */
-
-/* Gentle float — use on hero images or key icons */
+/* ── Float ── */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-6px); }
 }
-.animate-float {
-  animation: float 4s ease-in-out infinite;
-}
+.animate-float { animation: float 4s ease-in-out infinite; }
 
-/* Subtle shine sweep — use on CTA cards */
+/* ── Shine sweep ── */
 @keyframes shine {
   0%   { background-position: -200% center; }
   100% { background-position:  200% center; }
@@ -359,7 +339,7 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.14) 50%,
     transparent 100%
   );
   background-size: 200% auto;
@@ -367,56 +347,47 @@
   pointer-events: none;
 }
 
-/* ─────────────────────────────────────────
-   §H  MOBILE POLISH
-───────────────────────────────────────── */
+/* ── Mobile Polish ── */
 @media (max-width: 640px) {
-  /* Buttons stack full-width on mobile when inside a flex column */
-  .mobile-full > * {
-    width: 100% !important;
-  }
-
-  /* Tighten heading sizes on very small screens */
+  .mobile-full > * { width: 100% !important; }
   h1 { font-size: clamp(1.75rem, 6vw, 3rem) !important; }
   h2 { font-size: clamp(1.4rem,  5vw, 2rem) !important; }
-
-  /* Cards don't lift as aggressively on touch */
-  .neu-card:hover {
-    transform: translateY(-2px);
-  }
+  .neu-card:hover, .premium-card:hover { transform: translateY(-2px); }
 }
 
-/* ─────────────────────────────────────────
-   §I  TYPOGRAPHY POLISH
-───────────────────────────────────────── */
-/* Paragraphs that are NOT inside a flex/grid parent
-   get a readable measure.  Inside flex/grid the parent
-   already controls width, so we skip it.  */
-p:not([class]) {
-  max-width: 72ch;
-}
-p.wide { max-width: none; }  /* escape hatch */
+/* ── Typography Polish ── */
+p:not([class]) { max-width: 72ch; }
+p.wide { max-width: none; }
 
 strong {
   color: var(--color-text-primary);
   font-weight: 700;
 }
 
-/* Monospace code-like values */
 .mono-value {
-  font-family: var(--font-mono);
+  font-family: monospace;
   font-size: 0.75em;
   letter-spacing: 0.08em;
-  color: var(--color-accent);
+  color: var(--color-primary);
 }
 
-/* ─────────────────────────────────────────
-   §J  FOCUS VISIBLE (ACCESSIBILITY)
-───────────────────────────────────────── */
+/* ── Focus Visible ── */
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-primary);
   outline-offset: 3px;
   border-radius: 6px;
+}
+
+/* ── Gradient hero section utility ── */
+.hero-gradient {
+  background: var(--gradient-hero);
+}
+
+/* ── Glass effect (for overlays, navbar etc.) ── */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 } /* end @layer components */

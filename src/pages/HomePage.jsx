@@ -98,90 +98,113 @@ export default function HomePage() {
           §1  HERO
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section ref={refHero}>
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-
-        {/* Left — copy */}
-        <div className="flex flex-col gap-6 reveal">
-          <Badge variant="accent" dot>
-            Trusted Since 1994
-          </Badge>
-
-          <h1
-            className="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-[1.1] tracking-tight"
-            style={{ color: 'var(--color-text-primary)' }}
-          >
-            Leading Manufacturer of{' '}
-            <span style={{ color: 'var(--color-accent)' }}>
-              Industrial Plastic Containers
-            </span>
-          </h1>
-
-          <p
-            className="text-base md:text-lg leading-relaxed max-w-lg"
-            style={{ color: 'var(--color-text-secondary)' }}
-          >
-            Delivering high-quality plastic packaging solutions with over{' '}
-            <strong>30 years of expertise</strong> and large-scale production
-            capabilities across Maharashtra and beyond.
-          </p>
-
-          {/* CTA buttons — stack full-width on mobile */}
-          <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-2">
-            <Button
-              as={Link}
-              to="/products"
-              variant="primary"
-              size="lg"
-            >
-              View Products <ArrowRight size={16} />
-            </Button>
-            <Button
-              as={Link}
-              to="/contact"
-              variant="secondary"
-              size="lg"
-            >
-              Contact Us
-            </Button>
-          </div>
-
-          {/* Trust strip with LED dot */}
-          <div className="flex items-center gap-3 pt-2">
-            <span className="led-dot led-dot-sm" aria-hidden="true" />
-            <span
-              className="font-mono text-[11px] uppercase tracking-[0.15em]"
-              style={{ color: 'var(--color-text-secondary)' }}
-            >
-              ISO Certified · Pan-India Delivery · 85K+ Units/Day
-            </span>
-          </div>
-        </div>
-
-        {/* Right — hero image */}
-        <Card
-          screws
-          vents
-          padding="none"
-          hoverable={false}
-          className="overflow-hidden reveal reveal-delay-1"
-          style={{ minHeight: 380 }}
+        {/* Hero gradient background panel */}
+        <div
+          className="w-full rounded-2xl overflow-hidden"
+          style={{
+            background: 'linear-gradient(135deg, #0A2540 0%, #0B5ED7 58%, #14B8A6 100%)',
+            boxShadow: '0 24px 64px rgba(10, 37, 64, 0.22)',
+          }}
         >
-          <img
-            src={IMG.hero}
-            alt="Industrial plastic manufacturing facility"
-            className="img-reveal w-full h-full object-cover"
-            style={{ minHeight: 380 }}
-            /* TODO: replace with real facility photograph */
-          />
-          {/* Gradient overlay */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center px-8 py-14 md:px-14 md:py-16">
+
+          {/* Left — copy */}
+          <div className="flex flex-col gap-6 reveal">
+            <Badge
+              variant="accent"
+              dot
+              style={{
+                background: 'rgba(255,255,255,0.15)',
+                border: '1px solid rgba(255,255,255,0.25)',
+                color: '#ffffff',
+              }}
+            >
+              Trusted Since 1994
+            </Badge>
+
+            <h1
+              className="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-[1.1] tracking-tight"
+              style={{ color: '#FFFFFF', fontFamily: "'Poppins', sans-serif" }}
+            >
+              Leading Manufacturer of{' '}
+              <span style={{ color: '#22D3EE' }}>
+                Industrial Plastic Containers
+              </span>
+            </h1>
+
+            <p
+              className="text-base md:text-lg leading-relaxed max-w-lg"
+              style={{ color: 'rgba(255,255,255,0.78)' }}
+            >
+              Delivering high-quality plastic packaging solutions with over{' '}
+              <strong style={{ color: '#ffffff' }}>30 years of expertise</strong> and large-scale production
+              capabilities across Maharashtra and beyond.
+            </p>
+
+            {/* CTA buttons — stack full-width on mobile */}
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-2">
+              <Button
+                as={Link}
+                to="/products"
+                variant="primary"
+                size="lg"
+                style={{
+                  background: '#FFFFFF',
+                  color: '#0B5ED7',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
+                }}
+              >
+                View Products <ArrowRight size={16} />
+              </Button>
+              <Button
+                as={Link}
+                to="/contact"
+                variant="secondary"
+                size="lg"
+                style={{
+                  background: 'rgba(255,255,255,0.12)',
+                  color: '#FFFFFF',
+                  border: '1.5px solid rgba(255,255,255,0.3)',
+                  boxShadow: 'none',
+                }}
+              >
+                Contact Us
+              </Button>
+            </div>
+
+            {/* Trust strip with LED dot */}
+            <div className="flex items-center gap-3 pt-2">
+              <span className="led-dot led-dot-sm" aria-hidden="true" style={{ background: '#22D3EE' }} />
+              <span
+                className="font-mono text-[11px] uppercase tracking-[0.15em]"
+                style={{ color: 'rgba(255,255,255,0.65)' }}
+              >
+                ISO Certified · Pan-India Delivery · 85K+ Units/Day
+              </span>
+            </div>
+          </div>
+
+          {/* Right — hero image */}
           <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background:
-                'linear-gradient(135deg, rgba(224,229,236,0.18) 0%, transparent 60%)',
-            }}
-          />
-        </Card>
+            className="overflow-hidden rounded-xl reveal reveal-delay-1 relative"
+            style={{ minHeight: 380, boxShadow: '0 16px 48px rgba(0,0,0,0.25)' }}
+          >
+            <img
+              src={IMG.hero}
+              alt="Industrial plastic manufacturing facility"
+              className="img-reveal w-full h-full object-cover"
+              style={{ minHeight: 380 }}
+            />
+            {/* Subtle blue tint overlay */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  'linear-gradient(135deg, rgba(10,37,64,0.25) 0%, transparent 60%)',
+              }}
+            />
+          </div>
+          </div>
         </div>
       </section>
 
@@ -203,12 +226,12 @@ export default function HomePage() {
                 size="lg"
                 variant="recessed"
                 icon={<Icon size={24} />}
-                color="var(--color-accent)"
+                color="#0B5ED7"
               />
               <div>
                 <p
                   className="text-3xl font-extrabold leading-none"
-                  style={{ color: 'var(--color-accent)' }}
+                  style={{ color: '#0B5ED7' }}
                 >
                   {value}
                 </p>
@@ -479,29 +502,38 @@ export default function HomePage() {
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section ref={refCTA}>
         <div className="w-full">
-        <Card
-          screws
-          vents
-          padding="lg"
-          hoverable={false}
-          className="flex flex-col md:flex-row items-center justify-between gap-8"
-          style={{ padding: '3rem 3.5rem' }}
+        {/* CTA card — hero gradient background */}
+        <div
+          className="rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8"
+          style={{
+            background: 'linear-gradient(135deg, #0A2540 0%, #0B5ED7 55%, #14B8A6 100%)',
+            padding: '3rem 3.5rem',
+            boxShadow: '0 24px 56px rgba(10, 37, 64, 0.22)',
+          }}
         >
           {/* Text */}
           <div className="flex flex-col gap-3 text-center md:text-left">
-            <Badge variant="accent" dot>
+            <Badge
+              variant="accent"
+              dot
+              style={{
+                background: 'rgba(255,255,255,0.15)',
+                border: '1px solid rgba(255,255,255,0.25)',
+                color: '#ffffff',
+              }}
+            >
               Ready to Order?
             </Badge>
             <h2
               className="text-3xl md:text-4xl font-extrabold tracking-tight"
-              style={{ color: 'var(--color-text-primary)' }}
+              style={{ color: '#FFFFFF', fontFamily: "'Poppins', sans-serif" }}
             >
               Let's Talk{' '}
-              <span style={{ color: 'var(--color-accent)' }}>Packaging</span>
+              <span style={{ color: '#22D3EE' }}>Packaging</span>
             </h2>
             <p
               className="text-sm md:text-base"
-              style={{ color: 'var(--color-text-secondary)' }}
+              style={{ color: 'rgba(255,255,255,0.75)' }}
             >
               Reach out for bulk orders, custom requirements, or a free quote.
             </p>
@@ -514,6 +546,11 @@ export default function HomePage() {
               href="tel:9561618161"
               variant="primary"
               size="lg"
+              style={{
+                background: '#FFFFFF',
+                color: '#0B5ED7',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
+              }}
             >
               <Phone size={16} /> Call Now
             </Button>
@@ -524,11 +561,17 @@ export default function HomePage() {
               rel="noopener noreferrer"
               variant="secondary"
               size="lg"
+              style={{
+                background: 'rgba(255,255,255,0.12)',
+                color: '#FFFFFF',
+                border: '1.5px solid rgba(255,255,255,0.3)',
+                boxShadow: 'none',
+              }}
             >
               <MessageCircle size={16} /> WhatsApp
             </Button>
           </div>
-        </Card>
+        </div>
         </div>
       </section>
 

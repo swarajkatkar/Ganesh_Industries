@@ -56,7 +56,7 @@ export default function ProductsPage() {
                   className="absolute inset-0"
                   style={{
                     background:
-                      'linear-gradient(to top, rgba(224,229,236,0.7) 0%, transparent 50%)',
+                      'linear-gradient(to top, rgba(10,37,64,0.4) 0%, transparent 55%)',
                   }}
                 />
               </div>
@@ -72,7 +72,7 @@ export default function ProductsPage() {
                   </h2>
                   <ArrowRight
                     size={16}
-                    color="var(--color-accent)"
+                    color="#0B5ED7"
                     className="shrink-0 mt-0.5 transition-transform duration-200 group-hover:translate-x-1"
                   />
                 </div>
@@ -86,7 +86,7 @@ export default function ProductsPage() {
 
                 {/* Product count pill */}
                 <div className="mt-auto pt-3 flex items-center gap-2">
-                  <Package size={12} color="var(--color-accent)" />
+                  <Package size={12} color="#0B5ED7" />
                   <span
                     className="font-mono text-[10px] font-semibold uppercase tracking-wider"
                     style={{ color: 'var(--color-text-secondary)' }}

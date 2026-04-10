@@ -55,9 +55,9 @@ export default function CSRPage() {
             >
               <Badge variant="accent" dot>Corporate Social Responsibility</Badge>
               <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight"
-                style={{ color: '#ffffff' }}>
+                style={{ color: '#ffffff', fontFamily: "'Poppins', sans-serif" }}>
                 Business Beyond{' '}
-                <span style={{ color: '#0d9488' }}>Profit</span>
+                <span style={{ color: '#22D3EE' }}>Profit</span>
               </h1>
               <p className="text-base max-w-xl leading-relaxed"
                 style={{ color: 'rgba(255,255,255,0.85)' }}>
@@ -95,7 +95,7 @@ export default function CSRPage() {
                 <IconContainer
                   size="lg" variant="recessed"
                   icon={<Icon size={22} />}
-                  color="var(--color-accent)"
+                  color="#0B5ED7"
                 />
                 <div>
                   <Badge variant="accent">{pillar.badge}</Badge>
@@ -113,13 +113,13 @@ export default function CSRPage() {
 
               {/* Pull quote */}
               <div
-                className="flex gap-3 rounded-2xl p-4"
+                className="flex gap-3 rounded-xl p-4"
                 style={{
-                  background: 'var(--color-recessed)',
-                  boxShadow: 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff',
+                  background: '#EFF6FF',
+                  border: '1px solid rgba(11,94,215,0.12)',
                 }}
               >
-                <Quote size={20} color="var(--color-accent)" className="shrink-0 mt-0.5" />
+                <Quote size={20} color="#0B5ED7" className="shrink-0 mt-0.5" />
                 <p
                   className="text-sm leading-relaxed italic font-medium"
                   style={{ color: 'var(--color-text-secondary)' }}
@@ -130,7 +130,7 @@ export default function CSRPage() {
 
               {/* Emotion badge */}
               <div className="flex items-center gap-2">
-                <Heart size={14} color="var(--color-accent)" />
+                <Heart size={14} color="#14B8A6" />
                 <span className="font-mono text-[11px] font-semibold uppercase tracking-wider"
                   style={{ color: 'var(--color-text-secondary)' }}>
                   Core Value: {pillar.emotion}
@@ -150,7 +150,7 @@ export default function CSRPage() {
           { icon: Heart, title: 'Community Values',     desc: 'We embed social responsibility into our business decisions, not as an afterthought.' },
         ].map(({ icon: Icon, title, desc }, i) => (
           <Card key={title} screws={false} padding="lg" className={`flex flex-col gap-4 reveal reveal-delay-${(i % 3) + 1}`}>
-            <IconContainer size="md" variant="recessed" icon={<Icon size={20} />} color="var(--color-accent)" />
+            <IconContainer size="md" variant="recessed" icon={<Icon size={20} />} color="#0B5ED7" />
             <h3 className="font-bold text-sm" style={{ color: 'var(--color-text-primary)' }}>{title}</h3>
             <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>{desc}</p>
           </Card>
@@ -159,22 +159,28 @@ export default function CSRPage() {
 
       {/* ── §4 CTA ──────────────────────────────────────────────── */}
       <section ref={refCTA}>
-        <Card screws vents padding="lg" hoverable={false}
-          className="flex flex-col md:flex-row items-center justify-between gap-6 reveal"
-          style={{ padding: '2.5rem 3rem' }}
+        <div
+          className="rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 reveal"
+          style={{
+            background: 'linear-gradient(135deg, #0A2540 0%, #0B5ED7 55%, #14B8A6 100%)',
+            padding: '2.5rem 3rem',
+            boxShadow: '0 20px 48px rgba(10,37,64,0.2)',
+          }}
         >
           <div>
-            <h2 className="text-2xl font-extrabold" style={{ color: 'var(--color-text-primary)' }}>
+            <h2 className="text-2xl font-extrabold" style={{ color: '#FFFFFF', fontFamily: "'Poppins', sans-serif" }}>
               Share Our Values?
             </h2>
-            <p className="text-sm mt-1" style={{ color: 'var(--color-text-secondary)' }}>
+            <p className="text-sm mt-1" style={{ color: 'rgba(255,255,255,0.7)' }}>
               Partner with us and support a business built on trust, quality, and community.
             </p>
           </div>
-          <Button as={Link} to="/contact" variant="primary" size="lg">
+          <Button as={Link} to="/contact" variant="primary" size="lg"
+            style={{ background: '#FFFFFF', color: '#0B5ED7', boxShadow: '0 8px 20px rgba(0,0,0,0.12)' }}
+          >
             Get in Touch <ArrowRight size={15} />
           </Button>
-        </Card>
+        </div>
       </section>
 
     </div>

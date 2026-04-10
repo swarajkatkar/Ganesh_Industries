@@ -1,6 +1,6 @@
 /**
- * Button — Industrial Neumorphic
- * ─────────────────────────────
+ * Button — Premium Industrial Blue Theme
+ * ─────────────────────────────────────
  * Props:
  *   variant   : 'primary' | 'secondary' | 'ghost'   (default: 'primary')
  *   size      : 'sm' | 'md' | 'lg'                  (default: 'md')
@@ -12,38 +12,31 @@
 
 const VARIANTS = {
   primary: {
-    base: `
-      bg-[#0d9488] text-white
-    `,
+    base: 'text-white border-none',
     style: {
-      boxShadow: '6px 6px 12px rgba(0,0,0,0.15), -4px -4px 8px rgba(255,255,255,0.7)',
+      background: 'linear-gradient(135deg, #0B5ED7 0%, #14B8A6 100%)',
+      boxShadow: '0 10px 25px rgba(11, 94, 215, 0.25)',
     },
-    hover: 'hover:brightness-110 hover:-translate-y-[2px]',
-    active: 'active:translate-y-[2px] active:brightness-95 neu-btn-accent-press',
-    activeStyle: {},
+    hover: 'hover:-translate-y-[2px]',
+    hoverStyle: '0 16px 32px rgba(11, 94, 215, 0.38)',
+    active: 'active:translate-y-0',
   },
   secondary: {
-    base: `
-      bg-[#e2edf6] text-[#1a2e3a]
-    `,
+    base: 'text-[#0F172A] border border-[#E2E8F0] bg-white',
     style: {
-      boxShadow: '8px 8px 16px #b5c9db, -8px -8px 16px #ffffff',
+      boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
     },
-    hover: 'hover:-translate-y-[2px] hover:brightness-105',
-    active: 'active:translate-y-[2px] neu-btn-press',
-    activeStyle: {},
+    hover: 'hover:-translate-y-[2px] hover:shadow-md',
+    active: 'active:translate-y-0',
   },
   ghost: {
-    base: `
-      bg-transparent text-[#0d9488]
-    `,
+    base: 'bg-transparent text-[#0B5ED7]',
     style: {
+      border: '1.5px solid rgba(11, 94, 215, 0.35)',
       boxShadow: 'none',
-      border: '1.5px solid rgba(13,148,136,0.35)',
     },
-    hover: 'hover:bg-[rgba(13,148,136,0.06)] hover:-translate-y-[2px]',
-    active: 'active:translate-y-[2px] neu-btn-press',
-    activeStyle: {},
+    hover: 'hover:bg-[rgba(11,94,215,0.06)] hover:border-[#0B5ED7] hover:-translate-y-[2px]',
+    active: 'active:translate-y-0',
   },
 };
 
@@ -72,16 +65,16 @@ export default function Button({
       className={[
         /* Base shape */
         'inline-flex items-center justify-center gap-2',
-        'rounded-[12px]',
-        'font-sans font-semibold uppercase tracking-[0.08em]',
+        'rounded-[11px]',
+        'font-sans font-semibold uppercase tracking-[0.07em]',
         'select-none cursor-pointer',
-        /* Transitions — 300ms cubic-bezier */
+        /* Transitions */
         'transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]',
         /* Variant */
         v.base,
         /* Hover */
         !disabled && v.hover,
-        /* Active press */
+        /* Active */
         !disabled && v.active,
         /* Size */
         s,

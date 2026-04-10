@@ -1,6 +1,6 @@
 /**
- * Input — Industrial LED-focus Neumorphic
- * ─────────────────────────────────────────
+ * Input — Premium Industrial Blue Theme
+ * ──────────────────────────────────────
  * Props:
  *   label       : string           — floating label above the field
  *   error       : string           — error message (shows below field)
@@ -45,7 +45,7 @@ export default function Input({
         {icon && (
           <span
             className="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
-            style={{ color: 'var(--color-text-secondary)' }}
+            style={{ color: '#64748B' }}
           >
             {icon}
           </span>
@@ -57,14 +57,14 @@ export default function Input({
           className={[
             /* Shape */
             'rounded-[10px]',
-            /* Typography — monospace for industrial feel */
-            'font-mono text-[13px]',
-            /* Colours */
-            'bg-[#e2edf6]',
-            'text-[#1a2e3a]',
-            'placeholder:text-[#8aabb8]',
-            /* No border */
-            'border-0 outline-none',
+            /* Typography */
+            'font-sans text-[13px]',
+            /* Colours — clean white bg with border */
+            'bg-white text-[#0F172A]',
+            'placeholder:text-[#94A3B8]',
+            /* Border */
+            'border outline-none',
+            error ? 'border-red-400' : 'border-[#E2E8F0]',
             /* Padding — extra-left when icon present */
             icon ? 'pl-10 pr-4 py-3' : 'px-4 py-3',
             /* Width */
@@ -73,31 +73,24 @@ export default function Input({
             multiline ? 'resize-none' : '',
             /* Transition */
             'transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]',
-            /* Error state */
-            error ? 'ring-2 ring-[#0d9488]' : '',
             className,
           ]
             .filter(Boolean)
             .join(' ')}
           style={{
-            /* Inset neumorphic shadow — recessed look */
             boxShadow: error
-              ? 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff, 0 0 0 2px #0d9488'
-              : 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff',
-            /* Override focus ring from browser */
-            '--tw-ring-shadow': 'none',
+              ? '0 0 0 3px rgba(239,68,68,0.15)'
+              : 'none',
             ...extraStyle,
           }}
-          /* LED-accent glow on focus — via onFocus/onBlur so no CSS module needed */
           onFocus={(e) => {
-            e.currentTarget.style.boxShadow =
-              'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff, 0 0 0 2px #0d9488, 0 0 8px rgba(13,148,136,0.25)';
+            e.currentTarget.style.borderColor = '#0B5ED7';
+            e.currentTarget.style.boxShadow = '0 0 0 3px rgba(11,94,215,0.15)';
             if (rest.onFocus) rest.onFocus(e);
           }}
           onBlur={(e) => {
-            e.currentTarget.style.boxShadow = error
-              ? 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff, 0 0 0 2px #0d9488'
-              : 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff';
+            e.currentTarget.style.borderColor = error ? '#f87171' : '#E2E8F0';
+            e.currentTarget.style.boxShadow = error ? '0 0 0 3px rgba(239,68,68,0.15)' : 'none';
             if (rest.onBlur) rest.onBlur(e);
           }}
           {...rest}
@@ -108,7 +101,7 @@ export default function Input({
       {error && (
         <p
           className="text-[11px] font-medium mt-0.5"
-          style={{ color: '#0d9488' }}
+          style={{ color: '#EF4444' }}
         >
           {error}
         </p>

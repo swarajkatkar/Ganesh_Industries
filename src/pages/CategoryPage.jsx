@@ -20,11 +20,12 @@ function FilterChip({ label, active, onClick }) {
         'focus:outline-none',
       ].join(' ')}
       style={{
-        background: active ? 'var(--color-accent)' : 'var(--color-bg)',
-        color:      active ? '#fff'                 : 'var(--color-text-secondary)',
-        boxShadow:  active
-          ? '3px 3px 6px rgba(13,148,136,0.35), -2px -2px 5px rgba(255,255,255,0.5)'
-          : 'inset 3px 3px 6px #b5c9db, inset -3px -3px 6px #ffffff',
+        background: active
+          ? 'linear-gradient(135deg, #0B5ED7, #14B8A6)'
+          : '#EFF6FF',
+        color: active ? '#fff' : '#64748B',
+        border: active ? 'none' : '1px solid rgba(11,94,215,0.15)',
+        boxShadow: active ? '0 4px 12px rgba(11,94,215,0.25)' : 'none',
       }}
     >
       {label}
@@ -64,7 +65,7 @@ export default function CategoryPage() {
   const products = useMemo(() => {
     if (!category) return [];
     return category.products.filter((p) => {
-      const typeOk = activeTypes.length === 0 || activeTypes.includes(p.type);
+      const typeOk = activeTypes.length === 0 || activeTypes.includes(p.material || p.type);
       const sizeOk = !activeSize || p.sizes.includes(activeSize);
       return typeOk && sizeOk;
     });
@@ -74,7 +75,7 @@ export default function CategoryPage() {
   if (!category) {
     return (
       <div className="flex flex-col items-center justify-center gap-6 py-24 text-center">
-        <Package size={48} color="var(--color-accent)" />
+        <Package size={48} color="#0B5ED7" />
         <div>
           <h1 className="text-2xl font-bold" style={{ color: 'var(--color-text-primary)' }}>
             Category Not Found
@@ -101,7 +102,7 @@ export default function CategoryPage() {
       >
         <Link
           to="/products"
-          className="flex items-center gap-1 hover:text-[var(--color-accent)] transition-colors"
+          className="flex items-center gap-1 hover:text-[#0B5ED7] transition-colors"
         >
           <ArrowLeft size={13} /> Products
         </Link>
@@ -116,7 +117,7 @@ export default function CategoryPage() {
         <Card screws vents={false} padding="md" hoverable={false}>
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
-              <SlidersHorizontal size={14} color="var(--color-accent)" />
+              <SlidersHorizontal size={14} color="#0B5ED7" />
               <span
                 className="font-semibold text-sm"
                 style={{ color: 'var(--color-text-primary)' }}
@@ -127,7 +128,7 @@ export default function CategoryPage() {
             {hasFilters && (
               <button
                 onClick={clearFilters}
-                className="flex items-center gap-1 text-xs font-semibold transition-colors hover:text-[var(--color-accent)]"
+                className="flex items-center gap-1 text-xs font-semibold transition-colors hover:text-[#0B5ED7]"
                 style={{ color: 'var(--color-text-secondary)' }}
               >
                 <X size={12} /> Clear all
@@ -208,7 +209,7 @@ export default function CategoryPage() {
         {hasFilters && (
           <span
             className="font-mono text-[10px] uppercase tracking-wider"
-            style={{ color: 'var(--color-accent)' }}
+            style={{ color: '#0B5ED7' }}
           >
             Filters active
           </span>
@@ -221,11 +222,11 @@ export default function CategoryPage() {
           <div
             className="rounded-2xl p-14 flex flex-col items-center gap-4 text-center"
             style={{
-              boxShadow: 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff',
-              background: 'var(--color-bg)',
+              background: '#F8FAFC',
+              border: '1px solid #E2E8F0',
             }}
           >
-            <Package size={40} color="#b5c9db" />
+            <Package size={40} color="#CBD5E1" />
             <p
               className="font-semibold"
               style={{ color: 'var(--color-text-secondary)' }}
@@ -264,7 +265,7 @@ export default function CategoryPage() {
                   <div className="flex flex-col gap-3 p-5 flex-1">
                     {/* Type badge */}
                     <div className="self-start">
-                      <Badge variant="recessed">{product.type}</Badge>
+                      <Badge variant="recessed">{product.material || product.type}</Badge>
                     </div>
 
                     <h2
@@ -288,9 +289,9 @@ export default function CategoryPage() {
                           key={sz}
                           className="font-mono text-[10px] font-semibold px-2 py-1 rounded-lg"
                           style={{
-                            background: 'var(--color-recessed)',
-                            color: 'var(--color-text-secondary)',
-                            boxShadow: 'inset 2px 2px 4px #b5c9db, inset -2px -2px 4px #ffffff',
+                            background: '#EFF6FF',
+                            color: '#64748B',
+                            border: '1px solid rgba(11,94,215,0.12)',
                           }}
                         >
                           {sz}

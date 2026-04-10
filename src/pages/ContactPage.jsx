@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { Phone, Mail, MapPin, MessageCircle, Send, CheckCircle2 } from 'lucide-react';
 import { Card, Button, Badge, IconContainer, Input } from '../components/ui';
 import siteConfig from '../data/siteConfig';
 import useScrollReveal from '../hooks/useScrollReveal';
+
 
 /* ── WhatsApp URL helper ─────────────────────────────────────────── */
 function buildWhatsApp(name, message) {
@@ -112,9 +114,12 @@ export default function ContactPage() {
             <div className="flex flex-col items-center justify-center gap-5 py-12 text-center">
               <div
                 className="w-16 h-16 rounded-full flex items-center justify-center"
-                style={{ boxShadow: 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff' }}
+                style={{
+                  background: 'linear-gradient(135deg, #0B5ED7, #14B8A6)',
+                  boxShadow: '0 8px 24px rgba(11,94,215,0.3)',
+                }}
               >
-                <CheckCircle2 size={32} color="var(--color-accent)" />
+                <CheckCircle2 size={32} color="#ffffff" />
               </div>
               <div>
                 <h2 className="text-xl font-extrabold" style={{ color: 'var(--color-text-primary)' }}>
@@ -198,7 +203,7 @@ export default function ContactPage() {
               <IconContainer
                 size="md" variant="recessed"
                 icon={<Icon size={18} />}
-                color="var(--color-accent)"
+                color="#0B5ED7"
                 className="shrink-0"
               />
               <div className="flex flex-col gap-0.5">
@@ -211,7 +216,7 @@ export default function ContactPage() {
                 {href ? (
                   <a
                     href={href}
-                    className="text-sm font-bold hover:text-[var(--color-accent)] transition-colors break-all"
+                    className="text-sm font-bold hover:text-[#0B5ED7] transition-colors break-all"
                     style={{ color: 'var(--color-text-primary)' }}
                   >
                     {value}
@@ -274,17 +279,29 @@ export default function ContactPage() {
 
       {/* ── §3 Final CTA strip ──────────────────────────────────── */}
       <section ref={refCTA}>
-        <Card screws vents padding="lg" hoverable={false}
-          className="flex flex-col md:flex-row items-center justify-between gap-6 reveal"
-          style={{ padding: '2rem 2.5rem' }}
+        <div
+          className="rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 reveal"
+          style={{
+            background: 'linear-gradient(135deg, #0A2540 0%, #0B5ED7 55%, #14B8A6 100%)',
+            padding: '2rem 2.5rem',
+            boxShadow: '0 20px 48px rgba(10,37,64,0.2)',
+          }}
         >
           <div className="flex items-center gap-4">
-            <IconContainer size="lg" variant="recessed" icon={<CheckCircle2 size={24} />} color="var(--color-accent)" />
+            <div
+              className="w-14 h-14 rounded-full flex items-center justify-center shrink-0"
+              style={{
+                background: 'rgba(255,255,255,0.15)',
+                border: '1px solid rgba(255,255,255,0.25)',
+              }}
+            >
+              <CheckCircle2 size={24} color="#22D3EE" />
+            </div>
             <div>
-              <p className="font-bold text-base" style={{ color: 'var(--color-text-primary)' }}>
+              <p className="font-bold text-base" style={{ color: '#FFFFFF' }}>
                 Need Bulk Order Pricing?
               </p>
-              <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
+              <p className="text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>
                 We offer competitive rates for large volumes with direct factory dispatch.
               </p>
             </div>
@@ -297,10 +314,11 @@ export default function ContactPage() {
             variant="primary"
             size="lg"
             className="w-full md:w-auto"
+            style={{ background: '#FFFFFF', color: '#0B5ED7', boxShadow: '0 8px 20px rgba(0,0,0,0.12)' }}
           >
             <MessageCircle size={15} /> WhatsApp for Bulk Rates
           </Button>
-        </Card>
+        </div>
       </section>
 
     </div>

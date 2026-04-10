@@ -39,12 +39,12 @@ export default function InfrastructurePage() {
         <Badge variant="recessed">Infrastructure</Badge>
         <h1
           className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight"
-          style={{ color: 'var(--color-text-primary)' }}
+          style={{ color: 'var(--color-text-primary)', fontFamily: "'Poppins', sans-serif" }}
         >
           Built for{' '}
-          <span style={{ color: 'var(--color-accent)' }}>Scale.</span>{' '}
+          <span style={{ color: '#0B5ED7' }}>Scale.</span>{' '}
           Engineered for{' '}
-          <span style={{ color: 'var(--color-accent)' }}>Precision.</span>
+          <span style={{ color: '#14B8A6' }}>Precision.</span>
         </h1>
         <p className="text-base leading-relaxed max-w-2xl"
           style={{ color: 'var(--color-text-secondary)' }}>
@@ -58,9 +58,9 @@ export default function InfrastructurePage() {
       <div ref={refStats} className="grid grid-cols-2 lg:grid-cols-5 gap-5">
         {HIGHLIGHTS.map(({ icon: Icon, value, label, sub }, i) => (
           <Card key={label} screws vents={false} padding="md" className={`flex flex-col items-center text-center gap-3 reveal reveal-delay-${(i % 4) + 1}`}>
-            <IconContainer size="md" variant="recessed" icon={<Icon size={18} />} color="var(--color-accent)" />
+            <IconContainer size="md" variant="recessed" icon={<Icon size={18} />} color="#0B5ED7" />
             <p className="text-xl md:text-2xl font-extrabold leading-none"
-              style={{ color: 'var(--color-accent)' }}>{value}</p>
+              style={{ color: '#0B5ED7' }}>{value}</p>
             <p className="text-xs font-bold" style={{ color: 'var(--color-text-primary)' }}>{label}</p>
             <p className="font-mono text-[9px] uppercase tracking-wider"
               style={{ color: 'var(--color-text-secondary)' }}>{sub}</p>
@@ -78,9 +78,9 @@ export default function InfrastructurePage() {
         <div className="flex flex-col gap-5 reveal reveal-delay-1">
           <Badge variant="recessed">Machinery</Badge>
           <h2 className="text-3xl font-extrabold tracking-tight"
-            style={{ color: 'var(--color-text-primary)' }}>
+            style={{ color: 'var(--color-text-primary)', fontFamily: "'Poppins', sans-serif" }}>
             32 Automated{' '}
-            <span style={{ color: 'var(--color-accent)' }}>Blow-Moulding</span>{' '}
+            <span style={{ color: '#0B5ED7' }}>Blow-Moulding</span>{' '}
             Machines
           </h2>
           <p className="text-base leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
@@ -97,7 +97,7 @@ export default function InfrastructurePage() {
               'Automated trimming and inspection',
             ].map((pt) => (
               <li key={pt} className="flex items-center gap-3">
-                <CheckCircle2 size={14} color="var(--color-accent)" className="shrink-0" />
+                <CheckCircle2 size={14} color="#0B5ED7" className="shrink-0" />
                 <span className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>{pt}</span>
               </li>
             ))}
@@ -121,7 +121,7 @@ export default function InfrastructurePage() {
             { icon: Settings2,   title: 'Drop Impact Testing',   desc: 'Filled containers dropped from standard heights to validate structural integrity before dispatch.' },
           ].map(({ icon: Icon, title, desc }, i) => (
             <Card key={title} screws={false} padding="lg" className={`flex flex-col gap-4 reveal reveal-delay-${(i % 3) + 1}`}>
-              <IconContainer size="md" variant="recessed" icon={<Icon size={20} />} color="var(--color-accent)" />
+              <IconContainer size="md" variant="recessed" icon={<Icon size={20} />} color="#0B5ED7" />
               <h3 className="font-bold text-sm" style={{ color: 'var(--color-text-primary)' }}>{title}</h3>
               <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>{desc}</p>
             </Card>
@@ -134,9 +134,9 @@ export default function InfrastructurePage() {
         <div className="flex flex-col gap-5 reveal">
           <Badge variant="recessed">Logistics</Badge>
           <h2 className="text-3xl font-extrabold tracking-tight"
-            style={{ color: 'var(--color-text-primary)' }}>
+            style={{ color: 'var(--color-text-primary)', fontFamily: "'Poppins', sans-serif" }}>
             Own Fleet.{' '}
-            <span style={{ color: 'var(--color-accent)' }}>Pan-India</span>{' '}
+            <span style={{ color: '#0B5ED7' }}>Pan-India</span>{' '}
             Delivery.
           </h2>
           <p className="text-base leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
@@ -153,7 +153,7 @@ export default function InfrastructurePage() {
               'Secure loading with damage-prevent wrapping',
             ].map((pt) => (
               <li key={pt} className="flex items-center gap-3">
-                <Truck size={14} color="var(--color-accent)" className="shrink-0" />
+                <Truck size={14} color="#0B5ED7" className="shrink-0" />
                 <span className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>{pt}</span>
               </li>
             ))}

@@ -154,10 +154,13 @@ export default function ProductDetailPage() {
 
         {/* Product info */}
         <div className="flex flex-col gap-5">
-          {/* Category + type badges */}
+          {/* Category + material badges */}
           <div className="flex items-center gap-2 flex-wrap">
             <Badge variant="recessed">{category.name}</Badge>
-            <Badge variant="accent">{product.type}</Badge>
+            {product.material && <Badge variant="accent">{product.material}</Badge>}
+            {product.tags && product.tags.map((tag) => (
+              <Badge key={tag} variant="recessed">{tag}</Badge>
+            ))}
           </div>
 
           {/* Product name */}
@@ -363,7 +366,7 @@ export default function ProductDetailPage() {
             <SpecRow
               icon={Layers}
               label="Material"
-              value={product.type}
+              value={product.material || product.type || 'HDPE'}
             />
             <SpecRow
               icon={Ruler}
@@ -497,7 +500,7 @@ export default function ProductDetailPage() {
                     />
                   </div>
                   <div className="p-4 flex flex-col gap-2">
-                    <Badge variant="recessed">{rel.type}</Badge>
+                    <Badge variant="recessed">{rel.material || rel.type}</Badge>
                     <h3
                       className="text-sm font-bold leading-snug"
                       style={{ color: 'var(--color-text-primary)' }}

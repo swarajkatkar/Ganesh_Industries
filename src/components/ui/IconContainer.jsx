@@ -1,6 +1,6 @@
 /**
- * IconContainer — Neumorphic circular / rounded icon wrapper
- * ──────────────────────────────────────────────────────────
+ * IconContainer — Premium Industrial Blue Theme
+ * ──────────────────────────────────────────────
  * Props:
  *   icon     : ReactNode  — Lucide icon element (required)
  *   size     : 'sm' | 'md' | 'lg' | 'xl'     (default: 'md')
@@ -22,12 +22,14 @@ const SIZES = {
 
 const VARIANTS = {
   raised: {
-    boxShadow: '6px 6px 12px #b5c9db, -6px -6px 12px #ffffff',
-    background: '#e2edf6',
+    boxShadow: '0 4px 12px rgba(11, 94, 215, 0.12)',
+    background: '#EFF6FF',
+    border: '1px solid rgba(11, 94, 215, 0.12)',
   },
   recessed: {
-    boxShadow: 'inset 4px 4px 8px #b5c9db, inset -4px -4px 8px #ffffff',
-    background: '#ccdde9',
+    boxShadow: 'inset 0 2px 6px rgba(11, 94, 215, 0.1)',
+    background: '#DBEAFE',
+    border: '1px solid rgba(11, 94, 215, 0.15)',
   },
 };
 
@@ -36,7 +38,7 @@ export default function IconContainer({
   size = 'md',
   variant = 'raised',
   shape = 'circle',
-  color = 'var(--color-accent)',
+  color = 'var(--color-primary)',
   glow = true,
   rotate = false,
   onClick,
@@ -55,18 +57,13 @@ export default function IconContainer({
       onClick={onClick}
       onKeyDown={onClick ? (e) => e.key === 'Enter' && onClick(e) : undefined}
       className={[
-        /* Layout */
         'inline-flex items-center justify-center shrink-0',
         s.container,
-        /* Micro-interaction: scale + optional rotate + glow
-           Heavy: use CSS .icon-lift for scale(1.15)+rotate(8deg)+drop-shadow */
         'transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]',
-        /* Glow: stronger drop-shadow pulse on hover */
-        glow && 'hover:drop-shadow-[0_0_10px_rgba(13,148,136,0.65)]',
-        /* Scale & optional rotate */
+        glow && 'hover:drop-shadow-[0_0_10px_rgba(11,94,215,0.55)]',
         rotate ? 'hover:scale-115 hover:rotate-[15deg]' : 'hover:scale-110',
         onClick ? 'cursor-pointer select-none' : '',
-        onClick ? 'focus:outline-none focus:ring-2 focus:ring-[#0d9488]' : '',
+        onClick ? 'focus:outline-none focus:ring-2 focus:ring-[#0B5ED7]' : '',
         className,
       ]
         .filter(Boolean)
@@ -74,15 +71,14 @@ export default function IconContainer({
       style={{
         background: v.background,
         boxShadow: v.boxShadow,
+        border: v.border,
         borderRadius: br,
         ...extraStyle,
       }}
       {...rest}
     >
-      {/* Clone icon to forward size + color */}
       {icon && (
         <span style={{ color, display: 'flex', alignItems: 'center' }}>
-          {/* If icon is a Lucide element, size is controlled by the parent */}
           {typeof icon === 'function'
             ? icon({ size: s.icon, color })
             : icon}

@@ -47,10 +47,10 @@ export default function AboutPage() {
           <Badge variant="recessed" dot>Since 1993</Badge>
           <h1
             className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight"
-            style={{ color: 'var(--color-text-primary)' }}
+            style={{ color: 'var(--color-text-primary)', fontFamily: "'Poppins', sans-serif" }}
           >
             30+ Years of{' '}
-            <span style={{ color: 'var(--color-accent)' }}>Packaging</span>{' '}
+            <span style={{ color: '#0B5ED7' }}>Packaging</span>{' '}
             Excellence
           </h1>
           <p
@@ -93,8 +93,8 @@ export default function AboutPage() {
           { icon: Users,     value: '10+',     label: 'Avg. Employee Tenure (yrs)' },
         ].map(({ icon: Icon, value, label }, i) => (
           <Card key={label} screws vents={false} padding="lg" className={`text-center flex flex-col items-center gap-3 reveal reveal-delay-${i + 1}`}>
-            <IconContainer size="md" variant="recessed" icon={<Icon size={20} />} color="var(--color-accent)" />
-            <p className="text-3xl font-extrabold" style={{ color: 'var(--color-accent)' }}>{value}</p>
+            <IconContainer size="md" variant="recessed" icon={<Icon size={20} />} color="#0B5ED7" />
+            <p className="text-3xl font-extrabold" style={{ color: '#0B5ED7' }}>{value}</p>
             <p className="text-xs font-semibold" style={{ color: 'var(--color-text-secondary)' }}>{label}</p>
           </Card>
         ))}
@@ -112,7 +112,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {VALUES.map(({ icon: Icon, title, desc }, i) => (
             <Card key={title} screws={false} vents={false} padding="lg" className={`flex flex-col gap-4 reveal reveal-delay-${(i % 2) + 1}`}>
-              <IconContainer size="md" variant="recessed" icon={<Icon size={20} />} color="var(--color-accent)" />
+              <IconContainer size="md" variant="recessed" icon={<Icon size={20} />} color="#0B5ED7" />
               <h3 className="font-bold text-base" style={{ color: 'var(--color-text-primary)' }}>{title}</h3>
               <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>{desc}</p>
             </Card>
@@ -134,7 +134,7 @@ export default function AboutPage() {
           {/* Vertical spine */}
           <div
             className="absolute left-[19px] top-4 bottom-4 w-[2px] hidden sm:block"
-            style={{ background: 'linear-gradient(to bottom, var(--color-accent), rgba(13,148,136,0.1))' }}
+            style={{ background: 'linear-gradient(to bottom, #0B5ED7, rgba(11,94,215,0.1))' }}
           />
 
           {TIMELINE.map((item, i) => (
@@ -144,9 +144,12 @@ export default function AboutPage() {
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center font-mono text-[10px] font-bold"
                   style={{
-                    background: i === TIMELINE.length - 1 ? 'var(--color-accent)' : 'var(--color-bg)',
-                    color:      i === TIMELINE.length - 1 ? '#fff' : 'var(--color-accent)',
-                    boxShadow:  '5px 5px 10px #b5c9db, -5px -5px 10px #ffffff',
+                    background: i === TIMELINE.length - 1
+                      ? 'linear-gradient(135deg, #0B5ED7, #14B8A6)'
+                      : '#EFF6FF',
+                    color:  i === TIMELINE.length - 1 ? '#fff' : '#0B5ED7',
+                    border: i === TIMELINE.length - 1 ? 'none' : '1.5px solid rgba(11,94,215,0.2)',
+                    boxShadow: '0 4px 12px rgba(11,94,215,0.15)',
                   }}
                 >
                   {item.year.slice(2)}
@@ -158,7 +161,7 @@ export default function AboutPage() {
                 <div className="flex items-center gap-2 mb-1">
                   <span
                     className="font-mono text-[11px] font-bold"
-                    style={{ color: 'var(--color-accent)' }}
+                    style={{ color: '#0B5ED7' }}
                   >
                     {item.year}
                   </span>
@@ -192,10 +195,10 @@ export default function AboutPage() {
         <div className="flex flex-col gap-5 order-1 lg:order-2 reveal reveal-delay-1">
           <Badge variant="recessed">Our Culture</Badge>
           <h2 className="text-3xl font-extrabold tracking-tight"
-            style={{ color: 'var(--color-text-primary)' }}>
+            style={{ color: 'var(--color-text-primary)', fontFamily: "'Poppins', sans-serif" }}>
             Built on{' '}
-            <span style={{ color: 'var(--color-accent)' }}>Trust</span> &{' '}
-            <span style={{ color: 'var(--color-accent)' }}>Loyalty</span>
+            <span style={{ color: '#0B5ED7' }}>Trust</span> &{' '}
+            <span style={{ color: '#14B8A6' }}>Loyalty</span>
           </h2>
           <p className="text-base leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
             Many of our team members have been with us for over a decade.

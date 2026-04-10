@@ -1,47 +1,30 @@
 /**
- * Card — Signature Industrial Neumorphic 🔥
- * ─────────────────────────────────────────
+ * Card — Premium Industrial Theme
+ * ────────────────────────────────
  * Props:
- *   screws   : boolean  — show corner screw visuals (default: true)
- *   vents    : boolean  — show top-right vent lines  (default: false)
- *   hoverable: boolean  — enable lift on hover        (default: true)
- *   padding  : 'none' | 'sm' | 'md' | 'lg'           (default: 'md')
- *   as       : element tag                             (default: 'div')
+ *   screws   : boolean  — show corner accent dots (default: true)
+ *   vents    : boolean  — show top-right accent lines (default: false)
+ *   hoverable: boolean  — enable lift on hover (default: true)
+ *   padding  : 'none' | 'sm' | 'md' | 'lg'  (default: 'md')
+ *   as       : element tag (default: 'div')
  *   className / style / children / ...rest
  */
 
-/* ── Screw ────────────────────────────────────────────────────────── */
+/* ── Corner accent dot (replaces neumorphic screw) ── */
 function Screw({ className = '' }) {
   return (
     <span
       aria-hidden="true"
-      className={`absolute w-[10px] h-[10px] rounded-full ${className}`}
+      className={`absolute w-[8px] h-[8px] rounded-full ${className}`}
       style={{
-        background: `
-          radial-gradient(circle at 35% 35%,
-            #d0d5de 0%,
-            #b8bec9 40%,
-            #9aa0ae 70%,
-            #7f8592 100%)
-        `,
-        boxShadow: '1px 1px 2px rgba(0,0,0,0.25), -1px -1px 2px rgba(255,255,255,0.6)',
+        background: 'linear-gradient(135deg, #0B5ED7 0%, #14B8A6 100%)',
+        opacity: 0.25,
       }}
-    >
-      {/* Slot line — rotated 45° */}
-      <span
-        className="absolute inset-0 flex items-center justify-center"
-        style={{ transform: 'rotate(45deg)' }}
-      >
-        <span
-          className="block w-[5px] h-[1px]"
-          style={{ background: 'rgba(0,0,0,0.35)' }}
-        />
-      </span>
-    </span>
+    />
   );
 }
 
-/* ── Vent lines ───────────────────────────────────────────────────── */
+/* ── Top-right accent vent lines ── */
 function Vents() {
   return (
     <div
@@ -55,8 +38,8 @@ function Vents() {
           style={{
             width: `${20 - i * 3}px`,
             height: '2px',
-            background: 'linear-gradient(90deg, #b5c9db, transparent)',
-            opacity: 0.6,
+            background: 'linear-gradient(90deg, rgba(11,94,215,0.2), transparent)',
+            opacity: 0.7,
           }}
         />
       ))}
@@ -64,7 +47,7 @@ function Vents() {
   );
 }
 
-/* ── Padding map ──────────────────────────────────────────────────── */
+/* ── Padding map ── */
 const PADDING = {
   none: '',
   sm:   'p-4',
@@ -72,7 +55,7 @@ const PADDING = {
   lg:   'p-8',
 };
 
-/* ── Card ─────────────────────────────────────────────────────────── */
+/* ── Card ── */
 export default function Card({
   screws = true,
   vents = false,
@@ -88,10 +71,11 @@ export default function Card({
     <Tag
       className={[
         'relative overflow-hidden',
-        'bg-[#e2edf6] rounded-[16px]',
-        /* Base transition — 300ms cubic-bezier */
+        'bg-white rounded-[16px]',
+        'border border-[#E2E8F0]',
+        /* Transitions */
         'transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]',
-        /* Hook for CSS §B hover upgrade (-4px lift + deeper shadow) */
+        /* Hover lift */
         hoverable && 'neu-card-hover',
         PADDING[padding] ?? PADDING.md,
         className,
@@ -99,12 +83,12 @@ export default function Card({
         .filter(Boolean)
         .join(' ')}
       style={{
-        boxShadow: '8px 8px 16px #b5c9db, -8px -8px 16px #ffffff',
+        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.06)',
         ...extraStyle,
       }}
       {...rest}
     >
-      {/* ── Corner screws ──────────────────────────────── */}
+      {/* ── Corner accent dots ── */}
       {screws && (
         <>
           <Screw className="top-[10px] left-[10px]" />
@@ -114,10 +98,10 @@ export default function Card({
         </>
       )}
 
-      {/* ── Vent lines ─────────────────────────────────── */}
+      {/* ── Vent lines ── */}
       {vents && <Vents />}
 
-      {/* ── Shine sweep overlay (visible on hover via CSS) ── */}
+      {/* ── Shine sweep overlay on hover ── */}
       {hoverable && (
         <span
           aria-hidden="true"
@@ -125,7 +109,7 @@ export default function Card({
         />
       )}
 
-      {/* ── Content ────────────────────────────────────── */}
+      {/* ── Content ── */}
       {children}
     </Tag>
   );
